@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import Body from "./components/Body"; 
+// Importing the `Body` component from the `components` folder. 
+// This component will be rendered as part of the application's main content.
+
+import { Provider } from "react-redux"; 
+// Importing the `Provider` component from the `react-redux` library. 
+// The `Provider` is a higher-order component that connects the Redux store with the React application.
+
+import appStore from "./utils/appStore"; 
+// Importing the `appStore` created in the `appStore.js` file. 
+// This is the Redux store where the global state of the application will be managed.
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // Wrapping the entire app inside the `Provider` component.
+    // The `Provider` makes the Redux store available to all nested components.
+    <Provider store={appStore}> 
+      <Body />
+    </Provider>
   );
 }
 
