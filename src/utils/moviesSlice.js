@@ -15,6 +15,18 @@ const moviesSlice = createSlice({
       // This reducer updates the state with the payload (movie data) from the dispatched action
       state.nowPlayingMovies = action.payload;
     },
+    addPopularMovies: (state, action) => {
+      // This reducer updates the state with the payload (movie data) from the dispatched action
+      state.PopularMovies = action.payload;
+    },
+    addTopRatedMovies: (state, action) => {
+      // This reducer updates the state with the payload (movie data) from the dispatched action
+      state.TopRatedMovies = action.payload;
+    },
+    addUpcomingMovies: (state, action) => {
+      // This reducer updates the state with the payload (movie data) from the dispatched action
+      state.UpcomingMovies = action.payload;
+    },
     addTrailerVideo: (state, action) => {
       // This reducer updates the 'trailerVideo' state with the payload from the dispatched action
       // The payload contains the trailer video data for a specific movie
@@ -24,8 +36,8 @@ const moviesSlice = createSlice({
   },
 });
 
-// Export the generated action creators for adding now-playing movies and trailer video
-export const { addNowPlayingMovies, addTrailerVideo } = moviesSlice.actions;
+// Export the generated action creators for adding now-playing movies, Popular Movies, Upcoming Movies and trailer video
+export const { addNowPlayingMovies, addTrailerVideo, addPopularMovies, addTopRatedMovies, addUpcomingMovies } = moviesSlice.actions;
 
 // Export the reducer function to be used in the Redux store
 export default moviesSlice.reducer;
