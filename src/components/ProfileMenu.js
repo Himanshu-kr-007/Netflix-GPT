@@ -12,7 +12,8 @@ const ProfileMenu = () => {
   const handleSignOut = () => {
     signOut(auth)
       .then(() => {
-        navigate("/"); // Navigate to the home page on successful sign-out
+        // Remove this line also
+        // navigate("/"); // Navigate to the home page on successful sign-out
       })
       .catch((error) => {
         navigate("/error"); // Navigate to an error page on sign-out failure

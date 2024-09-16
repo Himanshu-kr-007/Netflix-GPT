@@ -8,19 +8,16 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/Firebase";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { NetflixBackgrounImage, AvatarIcon } from "../utils/constants";
 
 const Login = () => {
-
   // State variable to toggle between sign-in and sign-up forms
   const [isSignInForm, setIsSignInForm] = useState(true);
   // State for managing error messages, initially set to null
   const [errorMessage, setErrorMessage] = useState(null);
 
-  // Navigate Page if User is Login
-  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   // useRef hooks to store references to the email and password input fields.
@@ -67,13 +64,13 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: name.current?.value || "Unkown User",
-            photoURL: "https://avatars.githubusercontent.com/u/69851575?v=4",
+            photoURL: AvatarIcon,
           })
             .then(() => {
               // Dispatch Action From Here and update the Store once again: means update the user
               // Here user is not having the updated value so we are taking the infomration from the getAuth which have the updated value
               const currentUser = auth.currentUser;
-              if(currentUser) {
+              if (currentUser) {
                 const { uid, email, displayName, photoURL } = currentUser;
                 // Update the Redux store with user information
                 dispatch(
@@ -84,9 +81,8 @@ const Login = () => {
                     photoURL: photoURL,
                   })
                 );
-                navigate("/browse");
-              } else{
-                console.error("User Not Found after Profile")
+              } else {
+                console.error("User Not Found after Profile");
               }
             })
             .catch((error) => {
@@ -112,7 +108,6 @@ const Login = () => {
           const user = userCredential.user;
           console.log(user);
           console.log("Sign In Successful");
-          navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -131,7 +126,7 @@ const Login = () => {
       <div className="absolute inset-0">
         <img
           className="w-full h-full object-cover"
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/04bef84d-51f6-401e-9b8e-4a521cbce3c5/null/IN-en-20240903-TRIFECTA-perspective_0d3aac9c-578f-4e3c-8aa8-bbf4a392269b_large.jpg"
+          src={NetflixBackgrounImage}
           alt="Background"
         />
         <div className="absolute inset-0 bg-black opacity-50"></div>{" "}
