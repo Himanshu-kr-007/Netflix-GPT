@@ -55,6 +55,6 @@
             - Movie Suggestions
                 - MovieLists * N             
 
-    - Netflix GPT
+    - Gemini GPT
         - Search Bar
         - Movie Suggestions
