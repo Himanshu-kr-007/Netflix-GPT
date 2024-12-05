@@ -38,7 +38,9 @@
     - GPT Search Page
     - GPT Search Bar 
     - Multi-Language Feature in our APP
-    - // TO-DO Integrate GPT APIS 
+    - Integrated Gemini API
+    - Hide All the Secret in ENV Variable
+    - Build the GPT Movie Suggestion page to display movies
 
 # Features to be build:
     - Login/Signup (Page)
