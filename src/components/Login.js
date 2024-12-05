@@ -106,8 +106,8 @@ const Login = () => {
       )
         .then((userCredential) => {
           const user = userCredential.user;
-          console.log(user);
-          console.log("Sign In Successful");
+          // console.log(user);
+          // console.log("Sign In Successful");
         })
         .catch((error) => {
           const errorCode = error.code;
