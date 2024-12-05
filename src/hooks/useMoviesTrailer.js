@@ -40,7 +40,7 @@ const useMoviesTrailer = (movieId) => {
   // useEffect to fetch the trailer video when movieId changes
   useEffect(() => {
     if (movieId) {
-      getMovieVideos();
+     !trailerVideo && getMovieVideos();
     }
   }, [movieId, dispatch]); // Adding dispatch to the dependency array
 

@@ -20,6 +20,9 @@ export const API_Options = {
   },
 };
 
+// Gemini AI KEY
+export const GeminiAI_KEY = process.env.REACT_APP_GeminiAI_KEY;
+
 // Image CDN
 export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w500/";
 
@@ -29,6 +32,3 @@ export const SUPPORTED_LANGUAGES = [
   { identifier: "hindi", name: "Hindi" },
   { identifier: "spanish", name: "Spanish" },
 ];
-
-// Gemini AI KEY
-export const GeminiAI_KEY = process.env.REACT_APP_GeminiAI_KEY;

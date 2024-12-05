@@ -1,5 +1,5 @@
 import { API_Options } from "../utils/constants";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addNowPlayingMovies } from "../utils/moviesSlice";
 import { useEffect } from "react";
 const useNowPlayingMovies = () => {
@@ -7,6 +7,10 @@ const useNowPlayingMovies = () => {
 
   // Use Redux dispatch to send actions to the Redux store
   const dispatch = useDispatch();
+
+  // Memoization
+  const nowPlayingMovies = useSelector( store => store.movies.nowPlayingMovies);
+
 
   // Define an asynchronous function to fetch "Now Playing" movies from TMDB
   const getNowPlayingMovies = async () => {
@@ -29,7 +33,8 @@ const useNowPlayingMovies = () => {
   useEffect(
     () => {
       // Call the getNowPlayingMovies function to fetch the data
-      getNowPlayingMovies();
+      !nowPlayingMovies && getNowPlayingMovies();
+      // if(!nowPlayingMovies) getNowPlayingMovies();
     },
     [] // Empty dependency array ensures the API call is made only once
     // when the component is mounted (similar to componentDidMount)

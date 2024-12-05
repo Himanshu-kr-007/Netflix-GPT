@@ -1,5 +1,5 @@
 import { API_Options } from "../utils/constants";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addPopularMovies } from "../utils/moviesSlice";
 import { useEffect } from "react";
 const usePopularMovies = () => {
@@ -7,6 +7,8 @@ const usePopularMovies = () => {
 
   // Use Redux dispatch to send actions to the Redux store
   const dispatch = useDispatch();
+  const popularMovies = useSelector( store => store.movies.PopularMovies);
+
 
   // Define an asynchronous function to fetch "Now Playing" movies from TMDB
   const getPopularMovies = async () => {
@@ -29,7 +31,8 @@ const usePopularMovies = () => {
   useEffect(
     () => {
       // Call the getPopularMovies function to fetch the data
-      getPopularMovies();
+      // If Popular Movies is not their then make the API Call.
+      !popularMovies && getPopularMovies();
     },
     [] // Empty dependency array ensures the API call is made only once
     // when the component is mounted (similar to componentDidMount)

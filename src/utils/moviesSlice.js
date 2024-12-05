@@ -7,7 +7,8 @@ const moviesSlice = createSlice({
   initialState: {
     // The initial state of the slice
     nowPlayingMovies: null, // This will hold the "Now Playing" movies data once fetched
-    trailerVideo: null // This will hold the trailer video data for a specific movie
+    trailerVideo: null, // This will hold the trailer video data for a specific movie
+    popularMovies: null
   },
   reducers: {
     // Reducer functions to update the state

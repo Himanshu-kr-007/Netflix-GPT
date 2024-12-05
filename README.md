@@ -41,6 +41,7 @@
     - Integrated Gemini API
     - Hide All the Secret in ENV Variable
     - Build the GPT Movie Suggestion page to display movies
+    - Implemented Memoization
 
 # Features to be build:
     - Login/Signup (Page)
