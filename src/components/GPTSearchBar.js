@@ -97,26 +97,22 @@ const GPTSearchBar = () => {
 
   return (
     <div className="flex justify-center pt-[10%] ">
-      {/* Form for search bar with input box and button */}
       <form
         className="grid grid-cols-12 gap-0 w-full max-w-lg bg-white p-4 rounded-lg shadow-md"
         onSubmit={(e) => e.preventDefault()} // Prevent the default form submission behavior
       >
-        {/* Input box for entering search text */}
         <input
           ref={SearchText}
           type="text"
           className="col-span-9 p-3 border border-gray-300 rounded-l-lg outline-none text-gray-700 placeholder-gray-400"
           placeholder={lang[langKey].gptSearchPlaceholder} // Dynamic placeholder based on language key
         />
-        {/* Button to trigger GPT search */}
         <button
           type="submit"
           className="col-span-3 bg-red-700 text-white rounded-r-lg hover:bg-red-800 transition-colors py-3 font-medium"
           onClick={handleGPTSearchClick}
         >
           {lang[langKey].search}{" "}
-          {/* Dynamic button text based on language key */}
         </button>
       </form>
     </div>

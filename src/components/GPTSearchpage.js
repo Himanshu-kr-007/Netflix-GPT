@@ -14,8 +14,10 @@ const GptSearchPage = () => {
         />
         <div className="absolute inset-0 bg-black opacity-50"></div>
       </div>
-      <GPTSearchBar />
-      <GPTMovieSuggestions />
+      <div className="relative z-10 ">
+        <GPTSearchBar />
+        <GPTMovieSuggestions />
+      </div>
     </div>
   );
 };

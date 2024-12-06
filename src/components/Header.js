@@ -34,13 +34,14 @@ const Header = () => {
   }, []); // Adding navigate as a dependency
 
   return (
-    // Container for the header, positioned at the top with full width and padding
-    <div className="absolute top-0 left-0 w-full flex justify-between items-center px-8 py-4 bg-gradient-to-b from-black to-transparent z-10">
-      {/* Netflix Logo on the left */}
-      <img className="w-32 md:w-44" src={NetflixLOGO} alt="Netflix Logo" />
-      <ProfileMenu />
-    </div>
+<div className="absolute top-0 left-0 w-full flex flex-col md:flex-row md:justify-between items-center px-4 sm:px-6 md:px-8 py-4 bg-gradient-to-b from-black to-transparent z-20">
+  {/* Netflix Logo */}
+  <img className="w-24 sm:w-32 md:w-44 mb-4 md:mb-0" src={NetflixLOGO} alt="Netflix Logo" />
+  <ProfileMenu />
+</div>
+
   );
+  
 };
 
 export default Header;
